@@ -28,6 +28,7 @@ namespace Employee_Management_System.Controllers
 		public IActionResult Get([FromRoute] int id)
 		{
 			var employee = _context.Employees.Find(id);
+			// check if user exist
 			if (employee == null)
 			{
 				return NotFound();
@@ -35,10 +36,12 @@ namespace Employee_Management_System.Controllers
 			return Ok(employee);
 		}
 
+		// add new Employee
 		[HttpPost]
 		public IActionResult Create([FromBody] EmployeeDto employeeDto)
 		{
 			var employee = employeeDto.ToEmployeeFromEmployeeDto();
+			// add employee to database
 			_context.Employees.Add(employee);
 			_context.SaveChanges();
 			return Ok(new 
@@ -47,5 +50,26 @@ namespace Employee_Management_System.Controllers
 			});
 		}
 
+		[HttpPut]
+		[Route("{id}")]
+		public IActionResult Update([FromRoute] int id,[FromBody] EmployeeDto employeeDto)
+		{
+			var employee = _context.Employees.FirstOrDefault(x => x.Id == id);
+			// check if employee exist
+			if (employee == null)
+			{
+				return NotFound();
+			}
+			// update the employee
+			employee.FirstName = employeeDto.FirstName;
+			employee.LastName = employeeDto.LastName;
+			employee.Email = employeeDto.Email;
+			employee.PhoneNumber = employeeDto.PhoneNumber;
+			employee.Position = employeeDto.Position;
+			employee.Department = employeeDto.Department;
+			// save changes
+			_context.SaveChanges();
+			return Ok("Employee updated successfuly");
+		}
 	}
 }
