@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Employee_Management_System.Dtos;
+using Employee_Management_System.Mappers;
+using Employee_Management_System.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Employee_Management_System.Controllers
 {
@@ -30,6 +33,18 @@ namespace Employee_Management_System.Controllers
 				return NotFound();
 			}
 			return Ok(employee);
+		}
+
+		[HttpPost]
+		public IActionResult Create([FromBody] EmployeeDto employeeDto)
+		{
+			var employee = employeeDto.ToEmployeeFromEmployeeDto();
+			_context.Employees.Add(employee);
+			_context.SaveChanges();
+			return Ok(new 
+			{
+				message = "Employee created Successfully"
+			});
 		}
 
 	}

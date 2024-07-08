@@ -4,6 +4,7 @@ namespace Employee_Management_System.Models
 {
 	public class Employee
 	{
+		// Todo: change Id to GUID later
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		public string FirstName { get; set; } = string.Empty;

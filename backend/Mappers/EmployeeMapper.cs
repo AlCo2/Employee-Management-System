@@ -17,5 +17,18 @@ namespace Employee_Management_System.Mappers
 				Department = employee.Department,
 			};
 		}
+
+		public static Employee ToEmployeeFromEmployeeDto(this EmployeeDto employeeDto)
+		{
+			return new Employee
+			{
+				FirstName = employeeDto.FirstName,
+				LastName = employeeDto.LastName,
+				Email = employeeDto.Email,
+				PhoneNumber = employeeDto.PhoneNumber,
+				Position = employeeDto.Position,
+				Department = employeeDto.Department,
+			};
+		}
 	}
 }
