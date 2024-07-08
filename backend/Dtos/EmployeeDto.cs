@@ -1,11 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Employee_Management_System.Models
+﻿namespace Employee_Management_System.Dtos
 {
-	public class Employee
+	public class EmployeeDto
 	{
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id { get; set; }
 		public string FirstName { get; set; } = string.Empty;
 		public string LastName { get; set; } = string.Empty;
 		public string Email { get; set; } = string.Empty;

@@ -12,6 +12,7 @@ namespace Employee_Management_System.Controllers
 			_context = context;
 		}
 
+		// get all Employees
 		[HttpGet]
 		public IActionResult GetAll()
 		{
@@ -19,6 +20,7 @@ namespace Employee_Management_System.Controllers
 			return Ok(employees);
 		}
 
+		// get employee by ID
 		[HttpGet("{id}")]
 		public IActionResult Get([FromRoute] int id)
 		{
@@ -29,5 +31,6 @@ namespace Employee_Management_System.Controllers
 			}
 			return Ok(employee);
 		}
+
 	}
 }
