@@ -71,5 +71,23 @@ namespace Employee_Management_System.Controllers
 			_context.SaveChanges();
 			return Ok("Employee updated successfuly");
 		}
+
+		// delete employee using id
+		[HttpDelete]
+		[Route("{id}")]
+		public IActionResult Delete([FromRoute] int id)
+		{
+			var employee = _context.Employees.FirstOrDefault(x => x.Id == id);
+			// check if employee exist
+			if (employee == null)
+			{
+				return NotFound();
+			}
+			// delete the emolyee from the db
+			_context.Employees.Remove(employee);
+			//save changes
+			_context.SaveChanges();
+			return Ok("The employee deleted successfully");
+		}
 	}
 }
