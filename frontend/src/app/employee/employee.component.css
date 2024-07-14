@@ -96,6 +96,16 @@
     font-size: 16px;
     font-weight: 400;
 }
+.showButton{
+    background-color: white;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}
 .dialogCommand{
     display: flex;
     justify-content: end;

@@ -1,11 +1,12 @@
 export class Employee {
     constructor(
-      public firstName: string,
-      public lastName: string,
-      public email: string,
-      public phoneNumber: string,
-      public position: string,
-      public department: string,
+      public firstName: string | null,
+      public lastName: string | null,
+      public email: string | null,
+      public phoneNumber: string | null,
+      public position: string | null,
+      public department: string | null,
+      public id?: number,
     ) {}
   }
   

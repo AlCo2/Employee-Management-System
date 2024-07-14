@@ -6,27 +6,27 @@
         <div class="form">
             <div class="dialogInpContainer">
                 <label for="username" class="inputLabel">Firstname</label>
-                <input id="firstname" [(ngModel)]="employee.firstName" autocomplete="off" />
+                <input id="firstname" [formControl]="firstname" autocomplete="off" />
             </div>
             <div class="dialogInpContainer">
                 <label for="email" class="inputLabel">Lastname</label>
-                <input id="lastname" [(ngModel)]="employee.lastName" autocomplete="off" />
+                <input id="lastname" [formControl]="lastname" autocomplete="off" />
             </div>
             <div class="dialogInpContainer">
                 <label for="email" class="inputLabel">Email</label>
-                <input id="email" [(ngModel)]="employee.email" autocomplete="off" />
+                <input id="email" [formControl]="email" autocomplete="off" />
             </div>
             <div class="dialogInpContainer">
                 <label for="phone" class="inputLabel">Phone</label>
-                <input pInputText type="text" [(ngModel)]="employee.phoneNumber" id="phone" autocomplete="off" />
+                <input pInputText type="text" [formControl]="phone" id="phone" autocomplete="off" />
             </div>
             <div class="dialogInpContainer">
                 <label for="position" class="inputLabel">Position</label>
-                <input id="position" [(ngModel)]="employee.position" autocomplete="off" />
+                <input id="position" [formControl]="position" autocomplete="off" />
             </div>
             <div class="dialogInpContainer">
                 <label for="department" class="inputLabel">Department</label>
-                <input id="department" [(ngModel)]="employee.department" autocomplete="off" />
+                <input id="department" [formControl]="department" autocomplete="off" />
             </div>
             <div class="dialogCommand flex justify-content-end gap-2">
                 <button class="cancleButton" (click)="visible = false">Cancle</button>
@@ -70,10 +70,45 @@
                         <td>{{ employee.firstName }}</td>
                         <td>{{ employee.lastName }}</td>
                         <td>{{ employee.email }}</td>
-                        <td>{{ employee.phone }}</td>
+                        <td>{{ employee.phoneNumber }}</td>
                         <td>{{ employee.position }}</td>
                         <td>{{ employee.department }}</td>
-                        <td><button class="updateButton" (click)="deleteEmployee(employee.id)"><i class="pi pi-pencil"></i></button><button class="deleteButton" (click)="deleteEmployee(employee.id)"><i class="pi pi-trash"></i></button></td>
+                        <td><button class="showButton" (click)="showEmployee(employee.id)"><i class="pi pi-eye"></i></button><button class="updateButton" (click)="updateButton(employee)"><i class="pi pi-pencil"></i></button><button class="deleteButton" (click)="deleteEmployee(employee.id)"><i class="pi pi-trash"></i></button></td>
+                        <p-dialog [modal]="true" [(visible)]="visible2" [style]="{ width: '25rem' }">
+                            <div class="dialogTitle">
+                                <p>Update Employee</p>
+                            </div>
+                            <div class="form">
+                                <div class="dialogInpContainer">
+                                    <label for="username" class="inputLabel">Firstname</label>
+                                    <input id="firstname" [formControl]="firstname" autocomplete="off" />
+                                </div>
+                                <div class="dialogInpContainer">
+                                    <label for="email" class="inputLabel">Lastname</label>
+                                    <input id="lastname" [formControl]="lastname" autocomplete="off" />
+                                </div>
+                                <div class="dialogInpContainer">
+                                    <label for="email" class="inputLabel">Email</label>
+                                    <input id="email" [formControl]="email" autocomplete="off" />
+                                </div>
+                                <div class="dialogInpContainer">
+                                    <label for="phone" class="inputLabel">Phone</label>
+                                    <input pInputText type="text" [formControl]="phone" id="phone" autocomplete="off" />
+                                </div>
+                                <div class="dialogInpContainer">
+                                    <label for="position" class="inputLabel">Position</label>
+                                    <input id="position" [formControl]="position" autocomplete="off" />
+                                </div>
+                                <div class="dialogInpContainer">
+                                    <label for="department" class="inputLabel">Department</label>
+                                    <input id="department" [formControl]="department" autocomplete="off" />
+                                </div>
+                                <div class="dialogCommand flex justify-content-end gap-2">
+                                    <button class="cancleButton" (click)="visible2 = false">Cancle</button>
+                                    <button class="submitButton" (click)="visible2 = false;updateEmployee()">Update</button>
+                                </div>
+                            </div>
+                        </p-dialog>
                     </tr>
                 </ng-template>
             </p-table>
