@@ -1,55 +1,51 @@
-
+button, p{
+    font-family: "Poppins";
+}
 .main{
     background-color: #f8f9fb;
     min-height: 100vh;
     display: flex;
-    padding-top: 40px;
 }
 .sidebar{
     width: 20%;
-    
+    background-color: black;
 }
 .content{
     width: 80%;
 }
 .sidebarTitle{
     font-size: 1.5rem;
-    font-weight: bold;
-    margin-left: 30px;
+    font-weight: 700;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: white;
 }
 
 .menu{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 .menu-choice{
-    color: black;
-    
-    width: 90%;
-    border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 20px;
     cursor: pointer;
     transition: 300ms;
+    height: 40px;
+    color: white;
 }
 
 .menu-chosen{
-    background-color: #ffffff;
-    border: 1px solid #6871835b;
+    background-color: #1b54e48b;
 }
 
 .menu-choice:hover{
-    background-color: #ffffff;
-    border: 1px solid #6871835b;
+    background-color: #1b54e48b;
 }
 
 .showSidebar{
