@@ -69,7 +69,7 @@ namespace Employee_Management_System.Controllers
 			employee.Department = employeeDto.Department;
 			// save changes
 			_context.SaveChanges();
-			return Ok("Employee updated successfuly");
+			return Ok(employee);
 		}
 
 		// delete employee using id
@@ -87,7 +87,7 @@ namespace Employee_Management_System.Controllers
 			_context.Employees.Remove(employee);
 			//save changes
 			_context.SaveChanges();
-			return Ok("The employee deleted successfully");
+			return Ok();
 		}
 	}
 }
