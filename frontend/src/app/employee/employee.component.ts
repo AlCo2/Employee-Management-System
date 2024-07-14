@@ -65,6 +65,7 @@ export class EmployeeComponent implements OnInit{
     const employee = new Employee(this.firstname.value, this.lastname.value, this.email.value, this.phone.value, this.position.value, this.department.value, this.id);
     this.employeeService.updateEmployee(employee).subscribe((response)=>this.fetchEmployees()); 
   }
+  
   deleteEmployee(id:number)
   {
     this.employeeService.deleteEmployee(id).subscribe();

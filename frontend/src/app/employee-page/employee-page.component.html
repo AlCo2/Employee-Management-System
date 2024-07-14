@@ -1,11 +1,71 @@
-<p>employee-page works!</p>
-<button (click)="goBack()">Back</button>
-<p>{{employee?.id}}</p>
-<p>{{employee?.firstName}}</p>
-<p>{{employee?.lastName}}</p>
-<p>{{employee?.email}}</p>
-<p>{{employee?.phoneNumber}}</p>
-<p>{{employee?.position}}</p>
-<p>{{employee?.department}}</p>
+<button class="backButton" (click)="goBack()">Back</button>
+<p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <div class="dialogTitle">
+        <p>Update Employee</p>
+    </div>
+    <div class="form">
+        <div class="dialogInpContainer">
+            <label for="username" class="inputLabel">Firstname</label>
+            <input id="firstname" [formControl]="firstname" autocomplete="off" />
+        </div>
+        <div class="dialogInpContainer">
+            <label for="email" class="inputLabel">Lastname</label>
+            <input id="lastname" [formControl]="lastname" autocomplete="off" />
+        </div>
+        <div class="dialogInpContainer">
+            <label for="email" class="inputLabel">Email</label>
+            <input id="email" [formControl]="email" autocomplete="off" />
+        </div>
+        <div class="dialogInpContainer">
+            <label for="phone" class="inputLabel">Phone</label>
+            <input pInputText type="text" [formControl]="phone" id="phone" autocomplete="off" />
+        </div>
+        <div class="dialogInpContainer">
+            <label for="position" class="inputLabel">Position</label>
+            <input id="position" [formControl]="position" autocomplete="off" />
+        </div>
+        <div class="dialogInpContainer">
+            <label for="department" class="inputLabel">Department</label>
+            <input id="department" [formControl]="department" autocomplete="off" />
+        </div>
+        <div class="dialogCommand flex justify-content-end gap-2">
+            <button class="cancleButton" (click)="visible = false">Cancle</button>
+            <button class="submitButton" (click)="visible = false;updateEmployee()">Update</button>
+        </div>
+    </div>
+</p-dialog>
+<div class="profile">
+    <div class="profile_image">
+        <img src="https://i.pinimg.com/originals/ac/11/aa/ac11aa2add3b0193c8769e0a17d13535.jpg" width="100px" alt="">
+    </div>
+    <div class="dataDiv">
+        <p class="label">FirstName:</p>
+        <p>{{employee.firstName}}</p>
+    </div>
+    <div class="dataDiv">
+        <p class="label">LastName:</p>
+        <p>{{employee.lastName}}</p>
+    </div>
+    <div class="dataDiv">
+        <p class="label">Email:</p>
+        <p>{{employee.email}}</p>
+    </div>
+    <div class="dataDiv">
+        <p class="label">Phone:</p>
+        <p>{{employee.phoneNumber}}</p>
+    </div>
+    <div class="dataDiv">
+        <p class="label">Positione:</p>
+        <p>{{employee.position}}</p>
+    </div>
+    <div class="dataDiv">
+        <p class="label">department:</p>
+        <p>{{employee.department}}</p>
+    </div>
+    <div>
+        <button class="updateButton" (click)="updateButton(employee)">Update</button>
+        <button class="deleteButton" (click)="deleteEmployee()">Delete</button>
+    </div>
+</div>
 
 

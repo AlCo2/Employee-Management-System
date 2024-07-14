@@ -1,0 +1,122 @@
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile_image, .profile_image img{
+    border-radius: 100px;
+}
+.backButton{
+    background-color: black;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.updateButton{
+    background-color: #1e63e9;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.deleteButton{
+    background-color: #e91e63;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.dataDiv{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.label{   
+    width: 120px;
+    color: black;
+    font-weight: bold;
+    opacity: 70%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.submitButton, .cancleButton{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.submitButton{
+    background-color: black;
+    color: white;
+}
+.cancleButton{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.showButton{
+    background-color: white;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}
+.dialogCommand{
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    margin: 10px;
+    
+}
+.dialogInpContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.inputLabel{
+    font-weight:bold; width: 6rem;
+}
+.dialogText{
+    display: block;
+    margin-bottom: 10px;
+}
+input{
+    border-radius: 4px;
+    padding: 5px;
+}
+.form{
+    margin: 20px;
+}
+.dialogTitle{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}

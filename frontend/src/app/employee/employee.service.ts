@@ -28,7 +28,7 @@ export class EmployeeService {
     return this.http.put(`http://localhost:5152/api/employee/${employee.id}`, employee);
   }
 
-  deleteEmployee(id:number)
+  deleteEmployee(id?:number)
   {
     return this.http.delete(`http://localhost:5152/api/employee/${id}`)
   }
