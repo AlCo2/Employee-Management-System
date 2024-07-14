@@ -1,0 +1,133 @@
+.main{
+    border: 1.5px solid rgba(0, 0, 0, 0.037);
+    height: 100vh;
+    border-radius: 10px;
+}
+.header{
+    background-color: white;
+    border-bottom: 1.3px solid rgba(0, 0, 0, 0.237);
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 500;
+    padding: 15px;
+}
+.card{
+    background-color: white;
+    border: 1.3px solid rgba(0, 0, 0, 0.200);
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+.card-title{
+    display: flex;
+    gap: 5px;
+    font-weight: 600;
+    opacity: 60%;;
+}
+.card-body{
+    font-weight: bold;
+    opacity: 80%;
+}
+.body{
+    background-color: white;
+    border: 1.3px solid rgba(0, 0, 0, 0.200);
+    border-radius: 10px;
+    margin: 10px;
+}
+.body-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.body-header p{
+    font-weight: 600;
+    opacity: 90%;
+}
+.body-body{
+    margin: 10px;
+}
+.addEmployeeButton{
+    padding: 5px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submitButton, .cancleButton{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.submitButton{
+    background-color: black;
+    color: white;
+}
+.cancleButton{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.deleteButton{
+    background-color: white;
+    color: #e91e63;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}
+.updateButton{
+    background-color: white;
+    color: #1e63e9;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}
+.dialogCommand{
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    margin: 10px;
+    
+}
+.dialogInpContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.inputLabel{
+    font-weight:bold; width: 6rem;
+}
+.dialogText{
+    display: block;
+    margin-bottom: 10px;
+}
+input{
+    border-radius: 4px;
+    padding: 5px;
+}
+.form{
+    margin: 20px;
+}
+.dialogTitle{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* @media only screen and (max-width: 1000px) {
+    
+} */

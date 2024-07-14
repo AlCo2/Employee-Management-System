@@ -1,0 +1,82 @@
+<div class="main">
+    <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+        <div class="dialogTitle">
+            <p>New Employee</p>
+        </div>
+        <div class="form">
+            <div class="dialogInpContainer">
+                <label for="username" class="inputLabel">Firstname</label>
+                <input id="firstname" [(ngModel)]="employee.firstName" autocomplete="off" />
+            </div>
+            <div class="dialogInpContainer">
+                <label for="email" class="inputLabel">Lastname</label>
+                <input id="lastname" [(ngModel)]="employee.lastName" autocomplete="off" />
+            </div>
+            <div class="dialogInpContainer">
+                <label for="email" class="inputLabel">Email</label>
+                <input id="email" [(ngModel)]="employee.email" autocomplete="off" />
+            </div>
+            <div class="dialogInpContainer">
+                <label for="phone" class="inputLabel">Phone</label>
+                <input pInputText type="text" [(ngModel)]="employee.phoneNumber" id="phone" autocomplete="off" />
+            </div>
+            <div class="dialogInpContainer">
+                <label for="position" class="inputLabel">Position</label>
+                <input id="position" [(ngModel)]="employee.position" autocomplete="off" />
+            </div>
+            <div class="dialogInpContainer">
+                <label for="department" class="inputLabel">Department</label>
+                <input id="department" [(ngModel)]="employee.department" autocomplete="off" />
+            </div>
+            <div class="dialogCommand flex justify-content-end gap-2">
+                <button class="cancleButton" (click)="visible = false">Cancle</button>
+                <button class="submitButton" (click)="visible = false;onSubmit()">Add</button>
+            </div>
+        </div>
+    </p-dialog>
+    <div class="header">
+        <p>Employee</p>
+    </div>
+    <div class="card">
+        <div class="card-title">
+            <i class="pi pi-user"></i>
+            <p>Total Employee</p>
+        </div>
+        <div class="card-body">
+            <p>{{employees.length}}</p>
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-header">
+            <p>List</p>
+            <button (click)="showDialog()" class="addEmployeeButton"><i class="pi pi-plus"></i></button>
+        </div>
+        <div class="body-body">
+            <p-table [paginator]="true" [rows]="10" [value]="employees" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr style="height: 60px;">
+                        <th pSortableColumn="id">id <p-sortIcon field="id" /></th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee>
+                    <tr style="height: 40px;">
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.firstName }}</td>
+                        <td>{{ employee.lastName }}</td>
+                        <td>{{ employee.email }}</td>
+                        <td>{{ employee.phone }}</td>
+                        <td>{{ employee.position }}</td>
+                        <td>{{ employee.department }}</td>
+                        <td><button class="updateButton" (click)="deleteEmployee(employee.id)"><i class="pi pi-pencil"></i></button><button class="deleteButton" (click)="deleteEmployee(employee.id)"><i class="pi pi-trash"></i></button></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(
+		policy =>
+		{
+			policy.WithOrigins("http://localhost:4200");
+			policy.AllowAnyMethod();
+			policy.AllowAnyHeader();
+			policy.AllowCredentials();
+		});
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -23,6 +35,8 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 
