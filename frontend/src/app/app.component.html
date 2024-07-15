@@ -21,20 +21,29 @@
     </div>
   </div>
   <p-sidebar [(visible)]="sidebarVisible">
+    <div style="background-color: black; height: 100%;">
     <div class="sidebarTitle">
       <i class="pi pi-th-large"></i>
       <p>Hahn</p>
     </div>
-    <p-divider />
     <div class="menu">
       <div class="menu-choice menu-chosen">
         <i class="pi pi-user"></i>
         <p>Employee</p>
       </div>
+      <div class="menu-choice">
+        <i class="pi pi-clock"></i>
+        <p>Time</p>
+      </div>
+      <div class="menu-choice">
+        <i class="pi pi-bolt"></i>
+        <p>Services</p>
+      </div>
     </div>
+  </div>
   </p-sidebar>
   <div class="showSidebar">
-    <p-button class="showSidebar" (onClick)="sidebarVisible = true" icon="pi pi-bars" severity="contrast" size="large"/>
+    <button class="sidebarButton" (click)="sidebarVisible = true"><i class="pi pi-bars"></i></button>
   </div>
   <div class="content">
     <router-outlet />
