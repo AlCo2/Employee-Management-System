@@ -7,29 +7,33 @@ import { Employee } from './employee';
   providedIn: 'root'
 })
 export class EmployeeService {
+  private url = "http://localhost:5152";
 
   constructor(private http:HttpClient) { }
 
+  // get all employees from api
   getEmployees():Observable<any>
   {
-    return this.http.get('http://localhost:5152/api/employee');
+    return this.http.get(`${this.url}/api/employee`);
   }
+  // get employee using its id from api
   getEmployeeById(id:number)
   {
-    return this.http.get<Employee>(`http://localhost:5152/api/employee/${id}`);
+    return this.http.get<Employee>(`${this.url}/api/employee/${id}`);
   }
+  // add new employee to the database
   addEmployee(employee:Employee)
   {
-    return this.http.post<Employee>("http://localhost:5152/api/employee", employee);
+    return this.http.post<Employee>(`${this.url}/api/employee`, employee);
   }
-  
+  // update data of an employee
   updateEmployee(employee:Employee)
   {
-    return this.http.put(`http://localhost:5152/api/employee/${employee.id}`, employee);
+    return this.http.put(`${this.url}/api/employee/${employee.id}`, employee);
   }
-
+  // delete an employee
   deleteEmployee(id?:number)
   {
-    return this.http.delete(`http://localhost:5152/api/employee/${id}`)
+    return this.http.delete(`${this.url}/api/employee/${id}`)
   }
 }
