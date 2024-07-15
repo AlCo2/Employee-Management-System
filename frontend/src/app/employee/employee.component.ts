@@ -6,7 +6,7 @@ import {CommonModule} from '@angular/common';
 import {Employee} from './employee';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './employee.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-employee',
   standalone: true,
@@ -29,6 +29,11 @@ export class EmployeeComponent implements OnInit{
 
   ngOnInit(): void {
     this.fetchEmployees();
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd && event.url === '/') {
+        this.fetchEmployees()
+      }
+    });
   }
 
   fetchEmployees()
